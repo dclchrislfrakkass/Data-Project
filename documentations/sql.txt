@@ -1,0 +1,49 @@
+DROP TABLE IF EXISTS cas ;
+CREATE TABLE cas (id_cas INT(7),
+NumEtude VARCHAR (15),
+NomClassification VARCHAR(2) NOT NULL,
+Longitude VARCHAR(9),
+Latitude VARCHAR(9),
+DateObservationEtude VARCHAR(10),
+ResumeWeb VARCHAR(252),
+Doc_Associe VARCHAR(90),
+ResumeLong VARCHAR(3874),
+DonneeTable2_doc VARCHAR(1784),
+DateModification VARCHAR(10),
+PRIMARY KEY (id_cas)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS ville ;
+CREATE TABLE ville (id_ville INT(40) NOT NULL,
+NomEtude VARCHAR(64),
+PRIMARY KEY (id_ville)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS departement ;
+CREATE TABLE departement (idDepartement INT(3) NOT NULL,
+DepartementEtude VARCHAR(3),
+NomduDepartement VARCHAR(24),
+id_ville VARCHAR(3),
+PRIMARY KEY (idDepartement)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS region ;
+CREATE TABLE region (idRegion INT(6) NOT NULL,
+RegionEtude VARCHAR(26),
+idDepartement VARCHAR(6),
+PRIMARY KEY (idRegion)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS observer ;
+CREATE TABLE observer (idRegion INT(6) NOT NULL,
+NomClassification VARCHAR(6) NOT NULL,
+idDepartement VARCHAR(6) NOT NULL,
+id_ville VARCHAR(6) NOT NULL,
+PRIMARY KEY (idRegion,
+ NomClassification,
+ idDepartement,
+ id_ville)) ENGINE=InnoDB;
+
+ALTER TABLE departement ADD CONSTRAINT FK_departement_id_ville FOREIGN KEY (id_ville) REFERENCES ville (id_ville);
+
+ALTER TABLE region ADD CONSTRAINT FK_region_idDepartement_departement FOREIGN KEY (idDepartement) REFERENCES departement (idDepartement);
+ALTER TABLE observer ADD CONSTRAINT FK_observer_idRegion FOREIGN KEY (idRegion) REFERENCES region (idRegion);
+ALTER TABLE observer ADD CONSTRAINT FK_observer_NomClassification FOREIGN KEY (NomClassification) REFERENCES cas (NomClassification);
+ALTER TABLE observer ADD CONSTRAINT FK_observer_idDepartement FOREIGN KEY (idDepartement) REFERENCES departement (idDepartement);
+ALTER TABLE observer ADD CONSTRAINT FK_observer_id_ville FOREIGN KEY (id_ville) REFERENCES ville (id_ville);
