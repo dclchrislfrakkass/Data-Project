@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 10 jan. 2019 à 18:30
+-- Généré le :  ven. 11 jan. 2019 à 20:40
 -- Version du serveur :  5.5.57-MariaDB
 -- Version de PHP :  5.6.38
 

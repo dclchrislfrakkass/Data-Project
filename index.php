@@ -10,5 +10,22 @@
 
 
 <?php
-include 'php/class_form.php';
+
+
+require 'php/class_form.php';
+
+
+$form = new Form();
+echo '<h3>rechercher un cas: </h3>';
+echo $form->input('');
+echo ' par date : ';
+echo $form->date('date');
+echo 'par type de rencontre';
+echo $form->type('');
+echo $form->input('region');
+echo $form->input('ville');
+echo $form->radio('');
+
+echo $form->submit();
+
 
