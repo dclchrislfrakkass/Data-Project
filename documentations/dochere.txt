@@ -1,3 +1,0 @@
-base -> windows -1252
-
-separator |
