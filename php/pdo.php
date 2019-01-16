@@ -1,41 +1,43 @@
 <?php
 
-// try {
-//      $base = new PDO('mysql:host=127.0.0.1; dbname=xxx', 'root', '');                           //base localhost
-    //$bdd = new PDO('mysql:host=51.254.203.143; dbname=xxx', 'xxx', 'xxx', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));    //serveur
-    // $bdd = new PDO('mysql:host=192.168.1.20; dbname=xxx', 'xxx', 'xxx', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));     //serveur NAS
-//   }
- 
-//   catch(exception $e) {
-//     die('Erreur '.$e->getMessage());
-//   }
-
-
-
-
-  class PDOConfig extends PDO
+abstract class connectionDb
 {
-    private $moteur;
-    private $hote;
-    private $base_de_donnees;
-    private $utilisateur;
-    private $mot_de_passe;
+	public $bdd;
+	private $hostname;
+	private $dbname;
+	private $dbuser;
+	private $dbpassword;
 
-    public function __construct()
-    {
-        $this->moteur = 'mysql';
-        $this->hote = '127.0.0.1';
-        $this->base_de_donnees = 'dcl.dartagnan';
-        $this->utilisateur = 'root';
-        $this->mot_de_passe = '';
+	public function __construct($dbHost, $dbName, $dbUser, $dbPass){
+		$this->bdd = NULL;
+		$this->hostname = $dbHost;
+		$this->dbname = $dbName;
+		$this->dbuser = $dbUser;
+		$this->dbpassword = $dbPass;
+		$this->connectBdd();
+		return $this->bdd;
+	}
 
-        $dns = $this->moteur . ':dbname=' . $this->base_de_donnees . ";host=" . $this->hote;
-
-        parent::__construct( $dns, $this->utilisateur, $this->mot_de_passe );
-    }
+	public function connectBdd()
+	{
+		/* Récupération du contenu du fichier .json */
+		$contenu_fichier_json = file_get_contents('infos.json');
+		/* Les données sont récupérées sous forme de tableau (true) */
+		$bddInfos = json_decode($contenu_fichier_json, true);
+		try{
+			$bdd = new PDO('mysql:host=' . $bddInfos['hostname'] . ';dbname=' . $bddInfos['dbname'], $bddInfos['dbuser'], $bddInfos['dbpassword']);
+			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    		$bdd->exec("SET NAMES utf8");
+			if (!empty($bdd))
+			{
+				$this->bdd = $bdd;
+			}
+		}
+		catch (Exception $e) {
+			die ('Erreur : ' . $e->getMessage());
+		}
+		return $this->bdd;
+		
+	}
 }
-
-$pdoConf = new PDOConfig('bdd');
-
-echo 'test de PDO en private:</br></br>';
-var_dump($pdoConf);
+var_dump($bdd);

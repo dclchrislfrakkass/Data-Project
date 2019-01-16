@@ -13,7 +13,7 @@
 
 
 require 'php/class_form.php';
-require 'php/pdo.php'
+require 'php/pdo.php';
 
 $form = new Form();
 echo '<h3>rechercher un cas: </h3>';
@@ -29,3 +29,8 @@ echo $form->radio('');
 echo $form->submit();
 
 
+// var_dump($bdd);
+
+// $reponse = $bdd->query('SELECT NomEtude FROM Cas');
+
+// echo $reponse;
