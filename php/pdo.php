@@ -1,9 +1,9 @@
 <?php
 
 // try {
-//      $base = new PDO('mysql:host=127.0.0.1; dbname=dcl.dartagnan', 'root', '');                           //base localhost
-    //$bdd = new PDO('mysql:host=51.254.203.143; dbname=dcldartagnan', 'dclovni', 'bMulndojQdyo0jmY9', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));    //serveur
-    // $bdd = new PDO('mysql:host=192.168.1.20; dbname=dcl.dartagnan', 'dcl.dartagnan', 'dcl.dartagnan', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));     //serveur NAS
+//      $base = new PDO('mysql:host=127.0.0.1; dbname=xxx', 'root', '');                           //base localhost
+    //$bdd = new PDO('mysql:host=51.254.203.143; dbname=xxx', 'xxx', 'xxx', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));    //serveur
+    // $bdd = new PDO('mysql:host=192.168.1.20; dbname=xxx', 'xxx', 'xxx', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));     //serveur NAS
 //   }
  
 //   catch(exception $e) {
