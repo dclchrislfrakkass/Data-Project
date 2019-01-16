@@ -1,6 +1,6 @@
 <?php
 
-abstract class connectionDb
+class connectionBdd
 {
 	public $bdd;
 	private $hostname;
@@ -20,9 +20,8 @@ abstract class connectionDb
 
 	public function connectBdd()
 	{
-		/* Récupération du contenu du fichier .json */
 		$contenu_fichier_json = file_get_contents('infos.json');
-		/* Les données sont récupérées sous forme de tableau (true) */
+		/* recupération en tableau (true) */
 		$bddInfos = json_decode($contenu_fichier_json, true);
 		try{
 			$bdd = new PDO('mysql:host=' . $bddInfos['hostname'] . ';dbname=' . $bddInfos['dbname'], $bddInfos['dbuser'], $bddInfos['dbpassword']);
@@ -31,6 +30,7 @@ abstract class connectionDb
 			if (!empty($bdd))
 			{
 				$this->bdd = $bdd;
+				
 			}
 		}
 		catch (Exception $e) {
@@ -38,6 +38,11 @@ abstract class connectionDb
 		}
 		return $this->bdd;
 		
+		
 	}
+
+	// $connectBdd = new connectBdd();
+	// var_dump($bdd);
 }
-var_dump($bdd);
+echo 'test';
+return $bdd;

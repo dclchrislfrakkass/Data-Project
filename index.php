@@ -13,7 +13,7 @@
 
 
 require 'php/class_form.php';
-require 'php/pdo.php';
+require 'php/connectionDb.php';
 
 $form = new Form();
 echo '<h3>rechercher un cas: </h3>';
