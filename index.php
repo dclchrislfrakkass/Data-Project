@@ -13,6 +13,7 @@
 
 
 require 'php/class_form.php';
+require 'php/pdo.php';
 
 
 $form = new Form();
@@ -22,7 +23,9 @@ echo ' par date : ';
 echo $form->date('date');
 echo 'par type de rencontre';
 echo $form->type('');
+echo 'par Région';
 echo $form->input('region');
+echo 'par Ville';
 echo $form->input('ville');
 echo $form->radio('');
 
