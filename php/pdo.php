@@ -20,9 +20,12 @@ class connectionBdd
 
 	public function connectBdd()
 	{
-		$contenu_fichier_json = file_get_contents('infos.json');
+		$cJson = file_get_contents('infos.json');
 		/* recupération en tableau (true) */
-		$bddInfos = json_decode($contenu_fichier_json, true);
+		$bddInfos = json_decode($cJson, true);
+	
+		print_r($cJson);
+	
 		try{
 			$bdd = new PDO('mysql:host=' . $bddInfos['hostname'] . ';dbname=' . $bddInfos['dbname'], $bddInfos['dbuser'], $bddInfos['dbpassword']);
 			$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,13 +33,14 @@ class connectionBdd
 			if (!empty($bdd))
 			{
 				$this->bdd = $bdd;
-				
+								
 			}
 		}
 		catch (Exception $e) {
 			die ('Erreur : ' . $e->getMessage());
 		}
 		return $this->bdd;
+		$bdd = $this->bdd;
 		
 		
 	}
@@ -45,4 +49,4 @@ class connectionBdd
 	// var_dump($bdd);
 }
 echo 'test';
-return $bdd;
+var_dump($bdd);
