@@ -5,13 +5,15 @@
 <?php
 require 'pdo.php';
 // require 'requete.php';
-require 'test.php';
+// require 'test.php';
 
 ?>
+<!-- script test pour jquery
 <input type="text" value="1978">
 <p></p>
 
-<script>
+
+     <script>
 $("input")
 .keyup(function() {
     var value = $ (this).val();
@@ -21,13 +23,16 @@ console.log(value);
 
 })
 .keyup();
-</script>
-
+</script> -->
+<form  method="post" name="myform" action="">
+    <input type="text" name="motCle" maxlength="80" size="30">
+    <input type="submit" value="Submit" >
+</form>
 
 
 <?php
+$motCle = $_POST['motCle'];
 
-$motCle = $value;
 
 $stmt= $bd->prepare("SELECT * FROM Cas WHERE NumEtude= $motCle");
 $stmt->execute(array($motCle));
@@ -40,4 +45,4 @@ foreach($resultats as $resultat) {
     echo '<br />';
 }
 
-var_dump($stmt);
+// var_dump($stmt);
