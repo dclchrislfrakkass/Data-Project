@@ -25,17 +25,22 @@ console.log(value);
 .keyup();
 </script> -->
 <form  method="post" name="myform" action="">
-    <input type="text" name="motCle" maxlength="80" size="30">
+    <!-- <input type="text" name="motCle" maxlength="80" size="30"> -->
+    <input type="text" name="cle">
+    <select name="date">
     <input type="submit" value="Submit" >
 </form>
 
 
 <?php
-$motCle = $_POST['motCle'];
+// isset(motCle){
+// $motCle = $_POST['motCle'];
+$cle = "'%".$_POST['cle']."%'";
 
-
-$stmt= $bd->prepare("SELECT * FROM Cas WHERE NumEtude= $motCle");
-$stmt->execute(array($motCle));
+$stmt= $bd->prepare("SELECT * FROM Cas WHERE NomEtude LIKE $cle");
+// $stmt= $bd->prepare("SELECT * FROM Cas WHERE NumEtude= $motCle");
+// $stmt->execute(array($motCle));
+$stmt->execute(array($cle));
 
 $resultats = $stmt->fetchAll();
 
@@ -44,5 +49,6 @@ foreach($resultats as $resultat) {
     echo '<br />';
     echo '<br />';
 }
+
 
 // var_dump($stmt);
