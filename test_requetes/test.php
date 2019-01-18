@@ -19,3 +19,12 @@ foreach($resultats as $resultat) {
 // $stmt = $requete->fetchALl(){
 //     $motCle = $row['']
 // }
+
+$regions = $bd->prepare("SELECT * FROM Departement");
+$regions->execute(array());
+
+foreach($regions as $region) {
+    ?>
+    <option value="<?php $region['id'];?>"><?php $region['NomDuDepartement'];?></option>
+    <?php
+}
