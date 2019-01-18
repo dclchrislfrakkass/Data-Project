@@ -35,9 +35,9 @@ console.log(value);
     <?php
         $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
         $regions->execute(array());
-        $departement = $regions->fetchAll();
-        foreach($departement as $region) {?>
-        <option value="<?php $region['id_departement'];?>"><?php $region['NomDuDepartement'];?></option>
+        $departements = $regions->fetchAll();
+        foreach($departements as $departement) {?>
+        <option value="<?php $departement['id_departement'];?>"><?php $departement['NomDuDepartement'];?></option>
         <?php 
         } 
         ?>
