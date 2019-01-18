@@ -47,12 +47,12 @@ $stmt->execute(array($cle));
 
 $resultats = $stmt->fetchAll();
 
-// foreach($resultats as $resultat) {
-//     var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-//     echo '<br />';
-//     echo '<br />';
-// }
-// var_dump($stmt);
+foreach($resultats as $resultat) {
+    var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
+    echo '<br />';
+    echo '<br />';
+}
+var_dump($stmt);
 
 $sdate1 = $_POST['date1'];
 $sdate2 = $_POST['date2'];

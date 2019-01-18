@@ -14,3 +14,19 @@ var marker = L.marker(bourges).addTo(map);
 
 //ajout d'un popup
 marker.bindPopup('<h3> Bourges, France.</h3>');
+
+
+var geojsonMarkerOptions = {
+	radius: 8,
+	fillColor: "#ff7800",
+	color: "#000",
+	weight: 1,
+	opacity: 1,
+	fillOpacity: 0.8
+};
+
+L.geoJSON(someGeojsonFeature, {
+	pointToLayer: function (feature, latlng) {
+		return L.circleMarker(latlng, geojsonMarkerOptions);
+	}
+}).addTo(map);
