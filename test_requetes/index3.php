@@ -23,12 +23,27 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 
 
+function getColor(d) {
+    return d > 1000 ? '#800026' :
+        d > 500  ? '#BD0026' :
+        d > 200  ? '#E31A1C' :
+        d > 100  ? '#FC4E2A' :
+        d > 50   ? '#FD8D3C' :
+        d > 20   ? '#FEB24C' :
+        d > 10   ? '#FED976' :
+                    '#FFEDA0';
+}
+
+//////////////////ajouter marker rond rouge
+
+
+
 ////////////////////ajouter du texte en bulle
-var marker = L.marker([47.081012, 2.398781999999983]).addTo(carte);
-marker.bindPopup(''); // Je ne mets pas de texte par défaut
-var mapopup = marker.getPopup();
-mapopup.setContent('Bourges et les aliens'); // je personnalise un peu avant d'afficher
-marker.openPopup();
+// var marker = L.marker([47.081012, 2.398781999999983]).addTo(carte);
+// marker.bindPopup(''); // Je ne mets pas de texte par défaut
+// var mapopup = marker.getPopup();
+// mapopup.setContent('Bourges et les aliens'); // je personnalise un peu avant d'afficher
+// marker.openPopup();
 
 
 //////////////ajouter un marqueur où on clic
