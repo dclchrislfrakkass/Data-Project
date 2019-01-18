@@ -1,5 +1,0 @@
-# Modèle créé le : Wed Jan 16 11:35:28 CET 2019 
-Cas (id_cas_Cas, NumEtude_Cas, NomEtude_Cas, Latitude_Cas, Longitude_Cas, ResumeWeb_Cas, ResumeLong_Cas, NomClassification_Cas, DateModification_Cas) 
-Ville (id_ville_Ville, NomEtude_Ville, #cas_id_cas_cas, #id_departement_Departement) 
-Region (id_region_Region, RegionEtude_Region, #cas_id_cas_cas) 
-Departement (id_departement_Departement, DepartementEtude_Departement, NomDuDepartement_Departement, #cas_id_cas_cas, #id_region_Region) 
