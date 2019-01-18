@@ -37,7 +37,7 @@ console.log(value);
         $regions->execute(array());
         $departements = $regions->fetchAll();
         foreach($departements as $departement) {?>
-        <option value="<?php $departement['id_departement'];?>"><?php $departement['NomDuDepartement'];?></option>
+        <option value="<?php $departement['id_departement'];?>"><?php echo $departement['NomDuDepartement'];?></option>
         <?php 
         } 
         ?>
