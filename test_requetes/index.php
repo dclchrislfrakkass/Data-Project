@@ -33,12 +33,14 @@ console.log(value);
     <input type="number" name="date2"><br>
     <select name="depart" id="dp">
     <?php
-        $regions = $bd->prepare("SELECT * FROM Departement");
+        $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
         $regions->execute(array());
         $departement = $regions->fetchAll();
         foreach($departement as $region) {?>
         <option value="<?php $region['id_departement'];?>"><?php $region['NomDuDepartement'];?></option>
-        <?php}?>
+        <?php 
+        } 
+        ?>
     </select><br>
     <input type="submit" value="Submit" >
 </form>
