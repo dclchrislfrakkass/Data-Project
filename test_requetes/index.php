@@ -31,6 +31,15 @@ console.log(value);
     <input type="number" name="date1">
     <label for="date2">Au: </label>
     <input type="number" name="date2"><br>
+    <select name="depart" id="dp">
+    <?php
+        $regions = $bd->prepare("SELECT * FROM Departement");
+        $regions->execute(array());
+        $departement = $regions->fetchAll();
+        foreach($departement as $region) {?>
+        <option value="<?php $region['id_departement'];?>"><?php $region['NomDuDepartement'];?></option>
+        <?php}?>
+    </select><br>
     <input type="submit" value="Submit" >
 </form>
 
@@ -47,11 +56,11 @@ $stmt->execute(array($cle));
 
 $resultats = $stmt->fetchAll();
 
-// foreach($resultats as $resultat) {
-//     var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-//     echo '<br />';
-//     echo '<br />';
-// }
+foreach($resultats as $resultat) {
+    var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
+    echo '<br />';
+    echo '<br />';
+}
 // var_dump($stmt);
 
 $sdate1 = $_POST['date1'];
@@ -66,4 +75,4 @@ foreach($resultats2 as $resultat) {
     var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
     echo '<br />';
     echo '<br />';
-};
+}
