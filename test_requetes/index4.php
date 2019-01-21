@@ -9,21 +9,38 @@ require 'pdo.php';
 <form  method="post" name="myform" action="">
 
     <p>Par Département: </p>
-    <select name="depart" id="dp">
+    <select name="depart" id="dp" onchange="select()">
     <?php
         $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
         $regions->execute(array());
         $departements = $regions->fetchAll();
         foreach($departements as $departement) {?>
-        <option value="<?php echo $departement['id_departement'];?>" name="depSel"><?php echo $departement['NomDuDepartement'];?></option>
+        <option selected="<?php echo $departement['NomDuDepartement'];?>" name="depSel"><?php echo $departement['NomDuDepartement'];?></option>
         <?php 
-        } 
+        }
         ?>
+        <script>
+        $( "select" )
+        .change(function() {
+            var str = "";
+            $( "select option:selected" ).each(function() {
+            str += $( this ).text() + " ";
+            });
+            $( "div" ).text( str );
+        })
+        .trigger( "change" );
+        </script>
     </select><br>
     <input type="submit" value="Submit" >
 </form>
 
+<div id="test"></div>
+
+
 <?php
+
+
+
 
 $depSel = $_POST['depSel'];
 
