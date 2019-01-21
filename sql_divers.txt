@@ -1,0 +1,11 @@
+UPDATE Cas
+SET Latitude = REPLACE(Latitude, ',', '.')
+
+
+SELECT * 
+FROM Cas AS Cas, Departement AS Departement 
+WHERE Cas.id = Departement.id_departement
+
+
+
+SELECT Latitude, Longitude FROM `Cas` WHERE id =

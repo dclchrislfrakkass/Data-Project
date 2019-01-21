@@ -1,55 +1,5 @@
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-
-<?php
-require 'pdo.php';
-// require 'requete.php';
-// require 'test.php';
-
-?>
-<!-- script test pour jquery
-<input type="text" value="1978">
-<p></p>
-
-
-     <script>
-$("input")
-.keyup(function() {
-    var value = $ (this).val();
-    $("p").text(value);
-    
-console.log(value);
-
-})
-.keyup();
-</script> -->
-<form  method="post" name="myform" action="">
-    <!-- <input type="text" name="motCle" maxlength="80" size="30"> -->
-    <input type="text" name="cle"><br>
-    <label for="date1">Par date du: </label>
-    <input type="number" name="date1">
-    <label for="date2">Au: </label>
-    <input type="number" name="date2"><br>
-    <select name="depart" id="dp">
-    <?php
-        $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
-        $regions->execute(array());
-        $departements = $regions->fetchAll();
-        foreach($departements as $departement) {?>
-        <option value="<?php $departement['id_departement'];?>"><?php echo $departement['NomDuDepartement'];?></option>
-        <?php 
-        } 
-        ?>
-    </select><br>
-    <input type="submit" value="Submit" >
-</form>
-
-
 <?php
 
-include 'requetes.php'
-// var_dump($departement);
 echo '<br/>';
 $depSearch = $departement['NomDuDepartement'];
 $dpsearch = $bd->prepare("SELECT * 
