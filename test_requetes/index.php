@@ -31,13 +31,14 @@ console.log(value);
     <input type="number" name="date1">
     <label for="date2">Au: </label>
     <input type="number" name="date2"><br>
+    <p>Par Département: </p>
     <select name="depart" id="dp">
     <?php
         $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
         $regions->execute(array());
         $departements = $regions->fetchAll();
         foreach($departements as $departement) {?>
-        <option value="<?php $departement['id_departement'];?>"><?php echo $departement['NomDuDepartement'];?></option>
+        <option value="<?php $departement['id_departement'];?>" name="depSel"><?php echo $departement['NomDuDepartement'];?></option>
         <?php 
         } 
         ?>
@@ -75,7 +76,7 @@ $stmt->execute(array($cle));
 $resultats = $stmt->fetchAll();
 
 foreach($resultats as $resultat) {
-    var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
+    // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
     echo '<br />';
     echo '<br />';
 }
@@ -89,8 +90,21 @@ $stmt2->execute(array());
 
 $resultats2 = $stmt2->fetchAll();
 
-foreach($resultats2 as $resultat) {
-    var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
+foreach($resultats2 as $resultat2) {
+    var_dump('<b>Nom du cas : </b>'.$resultat2['NomEtude'].'<b> Observation : </b>'.$resultat2['ResumeWeb']);
     echo '<br />';
     echo '<br />';
+}
+
+$depSel = "'%". $_POST['depSel']."%'";
+
+if(isset($depSel)) {
+    $stmt3 = $bd->prepare("SELECT * FROM Cas AS Cas, Departement AS Departement WHERE Cas.id = Departement.id_departement AND NomDuDepartement LIKE $depSel");
+    $stmt3->execute(array($depSel));
+    $resultats3 = $stmt3->fetchAll();
+
+    foreach ($resultats3 as $resultat3) {
+        var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
+        echo '<br>';
+    }
 }

@@ -32,7 +32,7 @@ foreach($csv as $ligne){
     // $requete_pdo = $bdd->prepare("set FOREIGN_KEY_CHECKS=0");
     // $requete_pdo->execute();
 
-    
+    $NomEtude = addslashes($ligne[1]);
     $ResumeWeb = addslashes($ligne[8]);
     $ResumeLong = addslashes($ligne[10]);
     
@@ -40,7 +40,7 @@ foreach($csv as $ligne){
     print_r ($ligne);
     
     // $rqt = "INSERT INTO cas(id_cas,NumEtude,NomEtude,Latitude,Longitude,DateObservationEtude,ResumeWeb,ResumeLong,Nomclassification,DateModification) VALUES ('','$ligne[0]','$ligne[1]','$ligne[2]','$ligne[3]','$ligne[4]','$ligne[8]','$ligne[10]','$ligne[13]','$ligne[14]')";
-    $rqt ="INSERT INTO Cas(id,NumEtude,NomEtude,Latitude,Longitude,DateObservationEtude,ResumeWeb,ResumeLong,Nomclassification,DateModification) VALUES ('', '$ligne[0]','$ligne[1]', '$ligne[2]', '$ligne[3]', '$ligne[4]', '$ResumeWeb', '$ResumeLong', '$ligne[13]','$ligne[14]')";
+    $rqt ="INSERT INTO Cas(id,NumEtude,NomEtude,Latitude,Longitude,DateObservationEtude,ResumeWeb,ResumeLong,Nomclassification,DateModification) VALUES ('', '$ligne[0]','$NomEtude', '$ligne[2]', '$ligne[3]', '$ligne[4]', '$ResumeWeb', '$ResumeLong', '$ligne[13]','$ligne[14]')";
     echo '</br></br></br>echo rqt apres addslashes : </br>';
     var_dump($rqt);
     $query = $bdd->prepare($rqt);

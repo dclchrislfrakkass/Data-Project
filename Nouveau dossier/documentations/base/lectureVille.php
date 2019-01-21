@@ -20,13 +20,15 @@ foreach($csv as $ligne){
     print_r($ligne);
     echo '<br><br><br>';
 
+    $NomEtude = addslashes($ligne[1]);
+
     // pour enlever la contrainte de clé étrangère
     $requete_pdo = $bdd->prepare("set FOREIGN_KEY_CHECKS=0");
     $requete_pdo->execute();
 
     // echo '|'.implode('|', $ligne).'|';
 
-    $rqt = "INSERT INTO Ville(id_ville,NomEtude) VALUES ('','$ligne[1]')";
+    $rqt = "INSERT INTO Ville(id_ville,NomEtude) VALUES ('','$NomEtude')";
     $query = $bdd->prepare($rqt);
     $query->execute();
     echo '<br>';
