@@ -65,11 +65,11 @@ body {
 }
 #textCarte {
     background: rgba(131, 131, 131, 0.5);
-    height: 140px;
+    height: 144px;
     padding-top: 18%;
     text-align: center;
     border-radius: 10px;
-    margin-top: -3.5%  
+    margin-top: -7%  
 }
 .btnImg:hover {
     color: white;;
@@ -266,7 +266,8 @@ a {
         background-size: 50px;
         border-radius: 10px;
         height: 908px;
-        text-align: center;  
+        text-align: center;
+        margin-top: -3.5%;  
     }
     .btnImg { 
         color: black;
@@ -298,7 +299,6 @@ a {
         height: 200px;
         margin-left: 3%;
         margin-top: -18%;
-        padding-top: 2%;
         text-align: center;
         width: 30%;
     }
