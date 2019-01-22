@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -40,7 +41,9 @@ foreach($resultats as $resultat) {
     $long = $resultat['Longitude'];
     // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude']);
     echo '<br />';
-    echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude'].'<input class="button" type="button" value="+ d\'infos">';
+    echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude'].'<input class="button" type="button" value="+ d\'infos"></a><div id="divPlus" style="display:none;">
+    <p>Test</p>
+</div>';
 
 }
 
@@ -59,4 +62,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // L.marker([51.5, -0.09]).addTo(map)
 //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
 //     .openPopup();
+
+
 </script>
