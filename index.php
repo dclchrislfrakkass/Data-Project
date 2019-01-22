@@ -10,7 +10,10 @@
 <body>
 
     <header>
-        <div class="entete"></div>
+        <div class="entete">
+            <!-- <img src="image/LOVNI.svg"> -->
+        </div>
+
     </header>
 
     <main>
