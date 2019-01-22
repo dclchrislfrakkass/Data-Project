@@ -38,9 +38,9 @@ $resultats = $stmt->fetchAll();
 foreach($resultats as $resultat) {
     $lat = $resultat['Latitude'];
     $long = $resultat['Longitude'];
-    var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude']);
+    // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude']);
     echo '<br />';
-
+    echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude'].'<input class="button" type="button" value="+ d\'infos">';
 
 }
 
@@ -55,7 +55,6 @@ var marker = L.marker([lat, long]).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
 
 // L.marker([51.5, -0.09]).addTo(map)
 //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
