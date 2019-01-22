@@ -20,7 +20,11 @@
 <!-------------------------------------- ICI CE TROUVE UN FOND BLEU ---------------------------------------->
     <div class="contereurParent">
     
-        <div class="FondBleu"></div>
+        <div class="FondBleu">
+        <?php 
+            include'./test_requetes/index.php';
+            ?>
+        </div>
     
 <!-------------------------------------- ICI CE FINI LE FOND BLEU ------------------------------------------>
         
@@ -42,7 +46,12 @@
         
     </div>
     </main>
-    <div class="FondVert"></div>
+    <div class="FondVert">
+<?php
+include './test_requetes/results.php';
+?>
+
+    </div>
 
     <div class="FondText">
         <p>Bonjours et Bienvenue a vous sur OVNI TRUE OVNI TENDER</p>
