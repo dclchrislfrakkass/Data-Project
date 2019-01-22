@@ -69,10 +69,11 @@ body {
     height: 140px;
     padding-top: 18%;
     text-align: center;
-    border-radius: 10px;  
+    border-radius: 10px;
+    margin-top: -3.5%  
 }
 .btnImg:hover {
-    color: white;
+    color: white;;
 }
     
 /*======================= ici ce trouve le design du footer =========================*/
