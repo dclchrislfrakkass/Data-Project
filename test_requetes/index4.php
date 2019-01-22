@@ -23,36 +23,25 @@ require 'pdo.php';
     <input type="submit" value="Submit" name="envoyer">
 </form>
 
-<div id="test"></div>
-
-<script>
-    $( "select" )
-    .change(function() {
-        var str = "";
-        $( "select option:selected" ).each(function() {
-        str += $( this  ).val() + " ";
-        });
-        $( "div" ).val( str );
-    })
-    .trigger( "change" );
-</script>
 
 <?php
 
 // echo 'j\'en ai marre !!!';
+if (isset($_POST['envoyer'])){
+   
+    $depSel = $_POST['depart'];
 
-$depSel = $_POST['depSel'];
+    if(!empty($depSel)) {
+        echo 'j\'en ai marre !!!';
+        $stmt3 = $bd->prepare("SELECT * FROM Cas AS Cas, Departement AS Departement WHERE Cas.id = Departement.id_departement AND NomDuDepartement LIKE '%".$depSel."%'");
+        $stmt3->execute(array());
+        $resultats3 = $stmt3->fetchAll();
 
-if(empty($depSel)) {
-    echo 'j\'en ai marre !!!';
-    $stmt3 = $bd->prepare("SELECT * FROM Cas AS Cas, Departement AS Departement WHERE Cas.id = Departement.id_departement AND NomDuDepartement LIKE '%".$depSel."%'");
-    $stmt3->execute(array());
-    $resultats3 = $stmt3->fetchAll();
-
-    echo $depSel;
-    
-    foreach ($resultats3 as $resultat3) {
-        var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
-        echo '<br>';
+        echo $depSel;
+        
+        foreach ($resultats3 as $resultat3) {
+            var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
+            echo '<br>';
+        }
     }
 }
