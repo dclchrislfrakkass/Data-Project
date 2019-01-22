@@ -9,8 +9,6 @@ require 'pdo.php';
 
 ?>
 <!-- script test pour jquery
-<input type="text" value="1978">
-<p></p>
 
 
      <script>
@@ -49,39 +47,13 @@ console.log(value);
 
 <?php
 
-// include 'requetes.php';
-// // var_dump($departement);
-// echo '<br/>';
-// $depSearch = $departement['NomDuDepartement'];
-// $dpsearch = $bd->prepare("SELECT * 
-// FROM Cas AS Cas, Departement AS Departement 
-// WHERE Cas.id = Departement.id_departement");
-// $depsearch = $dpsearch->fetchAll();
+$cle = $_POST['cle'];
 
-// foreach($depsearch as $rrr) {
-//     var_dump('<b>Nom du cas : </b>'.$rrr['NomEtude'].'<b> Observation : </b>'.$rrr['ResumeWeb']);
-//     echo '<br />';
-//     echo '<br />';
-// }
-
-// isset(motCle){
-// $motCle = $_POST['motCle'];
-// $cle = "'%".$_POST['cle']."%'";
-$cle = "$_POST['cle']";
-
-$stmt= $bd->prepare("SELECT * FROM Cas WHERE NomEtude LIKE '"'%'".$cle."'%'"'");
-// $stmt= $bd->prepare("SELECT * FROM Cas WHERE NumEtude= $motCle");
-// $stmt->execute(array($motCle));
+$stmt= $bd->prepare("SELECT * FROM Cas WHERE NomEtude LIKE '%".$cle."%'");
 $stmt->execute(array($cle));
 
 $resultats = $stmt->fetchAll();
 
-foreach($resultats as $resultat) {
-    // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-    echo '<br />';
-    echo '<br />';
-}
-// var_dump($stmt);
 
 $sdate1 = $_POST['date1'];
 $sdate2 = $_POST['date2'];
@@ -97,15 +69,21 @@ foreach($resultats2 as $resultat2) {
     echo '<br />';
 }
 
-$depSel = "'%". $_POST['depSel']."%'";
+// echo 'j\'en ai marre !!!';
+if (isset($_POST['envoyer'])){
+   
+    $depSel = $_POST['depart'];
 
-if(isset($depSel)) {
-    $stmt3 = $bd->prepare("SELECT * FROM Cas AS Cas, Departement AS Departement WHERE Cas.id = Departement.id_departement AND NomDuDepartement LIKE $depSel");
-    $stmt3->execute(array($depSel));
-    $resultats3 = $stmt3->fetchAll();
+    if(!empty($depSel)) {
+        $stmt3 = $bd->prepare("SELECT * FROM Cas AS Cas, Departement AS Departement WHERE Cas.id = Departement.id_departement AND NomDuDepartement LIKE '%".$depSel."%'");
+        $stmt3->execute(array());
+        $resultats3 = $stmt3->fetchAll();
 
-    foreach ($resultats3 as $resultat3) {
-        var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
-        echo '<br>';
+        echo $depSel;
+        
+        foreach ($resultats3 as $resultat3) {
+            var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
+            echo '<br>';
+        }
     }
 }
