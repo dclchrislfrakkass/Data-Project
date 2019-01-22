@@ -22,7 +22,7 @@
     
         <div class="FondBleu">
         <?php 
-            include 'C:\laragon\www\Data-Project\Formulaire.php';
+            include 'Formulaire.php';
             ?>
         </div>
     
