@@ -4,7 +4,7 @@
 body {
     margin: 0;
     width: 100%;
-    background-color: #232325;
+    background-color: #d8d8da;
 }
 /*======================== design titre index ======================*/
 
@@ -22,9 +22,9 @@ body {
 
 /*======================== design formulaire a remplacer ======================*/
 .FondBleu {
-    background-color: rgb(0, 162, 255);
-    border-radius: 10px;
-    height: 15em;
+    /* background-color: rgb(0, 162, 255); */
+    /* border-radius: 10px; */
+    /* height: 15em; */
     margin-bottom: 8%;
     margin-left: 3%;
     margin-right: 3%;
@@ -247,8 +247,8 @@ a {
     }
     
     .FondBleu {
-        background-color: rgb(0, 162, 255);
-        border-radius: 10px;
+        /* background-color: rgb(0, 162, 255); */
+        /* border-radius: 10px; */
         height: 25em;
         margin-bottom: 2%;
         margin-top: 2%;

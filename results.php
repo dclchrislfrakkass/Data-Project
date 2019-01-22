@@ -1,5 +1,4 @@
 
-
 <?php
 // Requête pour les différentes recherches
 if(isset($_POST['Submit'])){
