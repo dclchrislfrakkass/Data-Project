@@ -36,8 +36,8 @@ if(isset($_POST['Submit'])){
     
         foreach ($resultats3 as $resultat3) {
             // var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
-            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement'];
-            echo '<br>';
+            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement'].'<b> Observation : </b>'.$resultat3['ResumeWeb'];
+            echo '<br><br/>';
         }
     } else ;
 

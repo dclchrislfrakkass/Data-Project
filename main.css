@@ -65,14 +65,13 @@ body {
 }
 #textCarte {
     background: rgba(131, 131, 131, 0.5);
-    height: 144px;
+    height: 140px;
     padding-top: 18%;
     text-align: center;
-    border-radius: 10px;
-    margin-top: -7%  
+    border-radius: 10px;  
 }
 .btnImg:hover {
-    color: white;;
+    color: white;
 }
     
 /*======================= ici ce trouve le design du footer =========================*/
@@ -259,15 +258,14 @@ a {
     .carte {
         border-radius: 10px;
         height: 1100px;
-        margin-top: 3%;  
+        margin-top: 2%;  
         width: 58%;  
     }
     #textCarte {
         background-size: 50px;
         border-radius: 10px;
         height: 908px;
-        text-align: center;
-        margin-top: -3.5%;  
+        text-align: center;  
     }
     .btnImg { 
         color: black;
@@ -289,6 +287,7 @@ a {
         margin-left: 3%;
         margin-top: -43%;
         width: 30%;
+        overflow: scroll;
     }
     
     .FondText {
@@ -299,6 +298,7 @@ a {
         height: 200px;
         margin-left: 3%;
         margin-top: -18%;
+        padding-top: 2%;
         text-align: center;
         width: 30%;
     }
