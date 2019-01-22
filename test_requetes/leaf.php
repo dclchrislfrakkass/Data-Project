@@ -1,58 +1,75 @@
+<head>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+</head>
+
+
+<div id="map" style="width:400px; height:400px"></div>
+
+<form  method="post" name="myform" action="">
+
+<input type="text" name="cle"><br>
+</form>
+
+
 <?php
- $z = array();
-$n=0;
+$cle = "'%".$_POST['cle']."%'";
 
 
-echo "DB selected successfully";
-$sqlperson= "SELECT * FROM Cas WHERE NomEtude LIKE %bourges%";
-$person=  sql_query($db,$sqlperson);       
-while( $row =sql_fetch_array($person)){
-$y=array(); 
 
-$y[]=$row["fistname"];
-$y[]=$row["latitude"];
-$y[]=$row["longitude"];   
-$z[$n]=$y;
-$n++;
+
+$connect = mysqli_connect('192.168.1.20','dcl.dartagnan', 'dcl.dartagnan', 'dcl.dartagnan');
+mysqli_set_charset($connect,"utf8");
+
+
+$sql= "SELECT id,NomEtude,Latitude,Longitude FROM Cas WHERE NomEtude LIKE $cle";
+
+$result = mysqli_query($connect, $sql);
+
+$json_array = array();
+
+while ($row = mysqli_fetch_assoc($result)){
+    
+    echo '<pre>';
+    print_r($json_array);
+    echo '</pre>';
+
+
+
+    $json_array[] = $row;
+    
 }
+
+// echo json_encode($json_array);
+
+file_put_contents('map.json', json_encode($json_array,true) );
+
+
+
+
 
 ?>
+<script>
+// var lat ="<?php echo $lat ?>";
+// var long ="<?php echo $long ?>";
+// var map = L.map('map').setView([lat , long], 11);
+// var marker = L.marker([lat, long]).addTo(map);
 
-<html>
-<head>
-<script type="text/javascript">
-//var locations = <?php echo json_encode($a);?>;
-var locationsb = <?php echo json_encode($z);?>;
-var map = new google.maps.Map(document.getElementById('map'), {
-zoom: 6,
-center: new google.maps.LatLng(22.00, 96.00),
-mapTypeId: google.maps.MapTypeId.ROADMAP
-});
+var map = L.map('map').setview([40,3],11);
 
-var infowindow = new google.maps.InfoWindow();
-var image = '/marker/map.png';
-// var image2 = '/marker/Map1.png';
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-var marker1, n;
-for (n = 0; n < locationsb.length; n++) {  
-marker1 = new google.maps.Marker({
-position: new google.maps.LatLng(locationsb[n][1], locationsb[n][2]),
-offset: '0',
-icon: image2,
-title: locationsb[n][4],
-map: map       
-});
-google.maps.event.addListener(marker1, 'click', (function(marker1, n)
-{
-return function() {
-infowindow.setContent(locationsb[n][0]);
-infowindow.open(map, marker1);
-}
-})(marker1, n));
-}
 
-</script> 
-<head>
-<body id="map"> 
-</body>
-</html>
+// L.marker([51.5, -0.09]).addTo(map)
+//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     .openPopup();
+</script>
