@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
 
-
 body {
     margin: 0;
     width: 100%;
@@ -10,7 +9,7 @@ body {
 /*======================== design titre index ======================*/
 
 .entete {
-    background-image: url("image/logoOVNI.png");
+    background-image: url("image/LOVNI.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -233,29 +232,33 @@ a {
 }
 
 /*===================== version desktops ====================*/
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 500px) {
 
     .entete {
-        background-image: url("image/LOVNI.svg");
+        /* background-image: url("image/LOVNI.svg");
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 203px;
+        background-repeat: no-repeat; */
+        /* background-size: cover; */
+        height: 100px;
+        display: flex;
+    }
+    .entete.img{
+        max-height:100%;
     }
     
     .FondBleu {
         background-color: rgb(0, 162, 255);
         border-radius: 10px;
         height: 25em;
-        margin-bottom: 3%;
-        margin-top: 5%;
+        margin-bottom: 2%;
+        margin-top: 2%;
         width: 30%;        
     }
     
     .carte {
         border-radius: 10px;
         height: 1100px;
-        margin-top: 5%;  
+        margin-top: 2%;  
         width: 58%;  
     }
     #textCarte {
@@ -282,7 +285,7 @@ a {
         border-radius: 10px;
         height: 25em;
         margin-left: 3%;
-        margin-top: -42%;
+        margin-top: -47%;
         width: 30%;
     }
     
