@@ -23,7 +23,7 @@
     
         <div class="FondBleu">
         <?php 
-            include 'Formulaire.php';
+            include 'php/Formulaire.php';
             ?>
         </div>
     
@@ -36,7 +36,7 @@
 
 <!---------------- ici ce trouve ma carte ------------------->       
         <div class="carte">
-            <a href="acceuilMap.php" class="btnImg">
+            <a href="php/acceuilMap.php" class="btnImg">
                 <div id="textCarte">
                 <p>Recherche via la carte</p>
                 </div>
@@ -50,7 +50,7 @@
     <div class="FondVert">
     <h2>Voici le résultat de votre recherche:</h2>
 <?php
-include 'results.php';
+include 'php/results.php';
 ?>
 
     </div>
@@ -62,7 +62,7 @@ include 'results.php';
 
     <footer>
         <div class="contact">
-            <a href="contact.php">contact</a>
+            <a href="php/contact.php">contact</a>
         </div>
     </footer>
 

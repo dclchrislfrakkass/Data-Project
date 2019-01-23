@@ -31,6 +31,66 @@ body {
     margin-top: 8%;
 }
 
+.FondVert {
+    float: left;
+    background-color: rgb(51, 255, 0);
+    border-radius: 10px;
+    height: auto;
+    margin-left: 3%;
+    margin-top: -43%;
+    width: 100%;
+    overflow: scroll;
+    font-family: 'Kurale';
+}
+
+.formulaire{
+    font-family: 'Roboto light', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 36em;
+    background-color: #42A5F4;
+    border-radius: 5px;
+    box-shadow: 0px 3px 20px black;
+    margin : 0.5em auto 0 auto;
+}
+.titreForm{
+    font-size: 2em;
+    margin : 15px 0 15px 20px;
+}
+.motCle, .date, .departement {
+    margin : 5px 10px 30px 15px;
+    font-size: 1.5em;
+}
+.cle, .date1, .date2, .depart{
+    height : auto;
+    font-size : 0.9em;
+    border: none;
+    border-radius : 5px;
+}
+.cle{
+    width : 75%;
+}
+.date1, .date2{
+    width : 20%;
+}
+
+.depart{
+    width : 25%;
+}
+.btnSub{
+    text-align : center;
+    margin : 0 0 15px 0;
+}
+.submit{
+    width : 150px;
+    height : 50px;
+    font-size : 1.5em;
+    border: none;
+    border-radius : 5px;
+    background-color: whitesmoke;
+}
+
 /*======================== design <p> ou ======================*/
 .text {
     font-family: 'Roboto';
@@ -38,6 +98,7 @@ body {
     text-align: center;
     color: white;   
 }
+
 
 /*======================== design de la carte ======================*/
 .carte {
