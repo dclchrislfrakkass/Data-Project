@@ -11,6 +11,7 @@ if(isset($_POST['Submit'])){
         $stmt->execute(array($_POST['cle']));
         $resultats = $stmt->fetchAll();
         foreach($resultats as $resultat) {
+<<<<<<< HEAD
             $lat = $resultat['Latitude'];
             $long = $resultat['Longitude'];
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude']);
@@ -18,6 +19,11 @@ if(isset($_POST['Submit'])){
             echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'];
             // .'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude'];
 
+=======
+            // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
+            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'];
+            echo '<br><br/>';
+>>>>>>> master
         } 
     } else ;
 
@@ -29,7 +35,7 @@ if(isset($_POST['Submit'])){
             $lat = $resultat['Latitude'];
             $long = $resultat['Longitude'];
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'];
+            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'];
             echo '<br><br/>';
         }
     } else ;
@@ -43,11 +49,12 @@ if(isset($_POST['Submit'])){
             $lat = $resultat['Latitude'];
             $long = $resultat['Longitude'];
             // var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
-            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement'].'<b> Observation : </b>'.$resultat3['ResumeWeb'];
+            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<br>'.'<b> Departement: </b>'.$resultat3['NomDuDepartement'].'<br>'.'<b> Observation : </b>'.$resultat3['ResumeWeb'];
             echo '<br><br/>';
         }
     } else ;
 
+<<<<<<< HEAD
 } else {
     echo 'merci de faire une recherche';
 }
@@ -73,3 +80,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 </script>
+=======
+} else ;
+>>>>>>> master

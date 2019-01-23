@@ -11,6 +11,11 @@
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet"> 
+>>>>>>> master
 </head>
 <body>
 
@@ -47,6 +52,7 @@
     </div>
     </main>
     <div class="FondVert">
+    <h2>Voici le résultat de votre recherche:</h2>
 <?php
 include 'results.php';
 ?>
