@@ -6,7 +6,6 @@
     <title>OTOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet"> 
 </head>
 <body>
 
@@ -19,11 +18,11 @@
 
     <main>
 <!-------------------------------------- ICI CE TROUVE UN FOND BLEU ---------------------------------------->
-    <div class="contereurParent">
+    <div class="container">
     
         <div class="FondBleu">
-        <?php 
-            include 'php/Formulaire.php';
+            <?php 
+                include 'php/Formulaire.php';
             ?>
         </div>
     
