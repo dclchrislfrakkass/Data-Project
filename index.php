@@ -36,17 +36,13 @@
     
     <div id="map"style="width:400px; height:400px"></div>
 <!-------------------------------------- ICI CE FINI LE FOND BLEU ------------------------------------------>
-        
-<!---------------- ici ce trouve un <p> ou ------------------->
-        <div class="text">
-            <p>ou</p>
-        </div>
+    
 
 <!---------------- ici ce trouve ma carte ------------------->       
         <div class="carte">
             <a href="acceuilMap.php" class="btnImg">
                 <div id="textCarte">
-                <p>Recherche via la carte</p>
+                
                 </div>
             </a>
         </div>
@@ -61,7 +57,7 @@
 include 'php/results.php';
 ?>
 
-    </div>
+    
 
     <div class="FondText">
         <p>Bonjours et Bienvenue a vous sur OVNI TRUE OVNI TENDER</p>
@@ -73,7 +69,7 @@ include 'php/results.php';
             <a href="php/contact.php">contact</a>
         </div>
     </footer>
-
+</div>
     <script src="main.js"></script>
 </body>
 </html>
