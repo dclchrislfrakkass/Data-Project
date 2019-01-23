@@ -12,7 +12,7 @@ if(isset($_POST['Submit'])){
         $resultats = $stmt->fetchAll();
         foreach($resultats as $resultat) {
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'];
+            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'];
             echo '<br><br/>';
         } 
     } else ;
@@ -23,7 +23,7 @@ if(isset($_POST['Submit'])){
         $resultats2 = $stmt2->fetchAll();
         foreach($resultats2 as $resultat) {
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'];
+            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'];
             echo '<br><br/>';
         }
     } else ;
@@ -35,11 +35,9 @@ if(isset($_POST['Submit'])){
     
         foreach ($resultats3 as $resultat3) {
             // var_dump('<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement']);
-            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<b> Departement: </b>'.$resultat3['NomDuDepartement'].'<b> Observation : </b>'.$resultat3['ResumeWeb'];
+            echo '<b>Nom du cas: </b>'.$resultat3['NomEtude'].'<br>'.'<b> Departement: </b>'.$resultat3['NomDuDepartement'].'<br>'.'<b> Observation : </b>'.$resultat3['ResumeWeb'];
             echo '<br><br/>';
         }
     } else ;
 
-} else {
-    echo 'merci de faire une recherche';
-}
+} else ;
