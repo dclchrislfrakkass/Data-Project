@@ -7,19 +7,23 @@ require 'pdo.php';
 ?>
 
 <form  method="post" name="myform" action="">
-
-    <p>Par Département: </p>
-    <select name="depart" id="dp" onchange="select()">
-    <?php
-        $regions = $bd->prepare("SELECT * FROM Departement GROUP BY NomDuDepartement");
-        $regions->execute(array());
-        $departements = $regions->fetchAll();
-        foreach($departements as $departement) {?>
-        <option value="<?php echo $departement['NomDuDepartement'];?>" name="depSel"><?php echo $departement['NomDuDepartement'];?></option>
-        <?php 
-        }
-        ?>
-    </select><br><br>
+    <?php 
+        $NClass = $_POST['']
+        $NomClass = $bd->prepare("SELECT * FROM Cas WHERE NomClassification LIKE '%".$NClass."%'");
+        $NomClass->execute(array());
+        $NomClassifications = $NomClass->fetchAll();
+        foreach($NomClassifications as $NomClassification) {
+            var_dump('<b>Nom du cas : </b>'.$NomClassification['NomEtude'].'<b> Observation : </b>'.$NomClassification['NomClassification']);
+            echo '<br><br/>';
+        } 
+    ?>
+    <input type="checkbox" value="" name="">tous
+    <input type="checkbox" value="" name="">A
+    <input type="checkbox" value="" name="">B
+    <input type="checkbox" value="" name="">C
+    <input type="checkbox" value="" name="">D
+    <input type="checkbox" value="" name="">D1
+    <input type="checkbox" value="" name="">D2<br><br>
     <input type="submit" value="Submit" name="envoyer">
 </form>
 

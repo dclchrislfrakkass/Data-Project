@@ -29,7 +29,7 @@
     
         <div class="FondBleu">
         <?php 
-            include'./test_requetes/index.php';
+            include 'Formulaire.php';
             ?>
         </div>
     
@@ -55,7 +55,7 @@
     </main>
     <div class="FondVert">
 <?php
-include './test_requetes/results.php';
+include 'results.php';
 ?>
 
     </div>
