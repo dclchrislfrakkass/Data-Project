@@ -10,7 +10,16 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+<!-------------------------------------- ICI CE TROUVE UN FOND BLEU ---------------------------------------->
+<div class="contereurParent">
+    
+    <div class="FondBleu">
+    <?php 
+        include 'Formulaire.php';
+        ?>
+    </div>
 
+<!-------------------------------------- ICI CE FINI LE FOND BLEU ------------------------------------------>
 
 <div id="map"style="width:400px; height:400px"></div>
 

@@ -7,12 +7,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
 
@@ -36,18 +34,13 @@
 <!-------------------------------------- ICI CE FINI LE FOND BLEU ------------------------------------------>
         
 <!---------------- ici ce trouve un <p> ou ------------------->
-        <div class="text">
+        <!-- <div class="text">
             <p>ou</p>
-        </div>
+        </div> -->
 
 <!---------------- ici ce trouve ma carte ------------------->       
-        <div class="carte"><div id="mapid"></div>
-            <a href="acceuilMap.php" class="btnImg">
-                <div id="textCarte">
-                <p>Recherche via la carte</p>
-                </div>
-            </a>
-        </div>
+<div id="mymap"style="width:400px; height:400px"></div>
+
 
 
         
@@ -61,7 +54,7 @@ include 'results.php';
     </div>
 
     <div class="FondText">
-        <p>Bonjours et Bienvenue a vous sur OVNI TRUE OVNI TENDER</p>
+        <p>Bonjour et Bienvenue a vous sur OVNI TRUE OVNI TENDER</p>
     </div>
 
 
@@ -70,17 +63,41 @@ include 'results.php';
             <a href="contact.php">contact</a>
         </div>
     </footer>
+<script src="app.js"></script>
 
-    <script src="main.js">
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-    
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox.streets',
-            accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
-    
-    </script>
+
 </body>
+<!--
+    // var mymap = L.map('map').setView([51.505, -0.09], 13);
+    // var lat ="<?php echo $lat ?>";
+    // var long ="<?php echo $long ?>";
+    // var map = L.map('map').setView([lat , long], 11);
+    // var marker = L.marker([lat, long]).addTo(map);
+
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    // }).addTo(map);
+
+    // // L.marker([51.5, -0.09]).addTo(map)
+    // //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    // //     .openPopup();
+
+
+
+// <script>
+//     var lat ="<?php echo $lat ?>";
+//     var long ="<?php echo $long ?>";
+//     var map = L.map('map').setView([lat , long], 11);
+//     var marker = L.marker([lat, long]).addTo(map);
+
+//     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+//     }).addTo(map);
+
+//     // L.marker([51.5, -0.09]).addTo(map)
+//     //     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+//     //     .openPopup();
+
+
+//     </script>
 </html>
