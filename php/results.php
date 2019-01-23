@@ -48,9 +48,7 @@ if(isset($_POST['Submit'])){
         }
     } else ;
 
-} else {
-    echo 'merci de faire une recherche';
-}
+} else ;
 
 
 
