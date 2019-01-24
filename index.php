@@ -14,44 +14,30 @@
     integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
     crossorigin=""></script>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
-
     <header>
         <div class="entete">
-            <!-- <img src="image/LOVNI.svg"> -->
+            <img src="image/logoOvniTender300px.svg" alt="logo OT²" class="logo">
         </div>
-
     </header>
 
     <main>
-<!-------------------------------------- ICI CE TROUVE UN FOND BLEU ---------------------------------------->
+<!-------------------------------------- Formulaire + carte  ---------------------------------------->
     <div class="contereurParent">
-    
         <div class="FondBleu">
-            <?php 
-                include 'php/Formulaire.php';
-            ?>
+            <?php include 'php/Formulaire.php';?>
         </div>
-    
-        <div id="map"style="width:360px; height:360px"></div>
-<!-------------------------------------- ICI CE FINI LE FOND BLEU ------------------------------------------>
-                
+        <div id="map"style="width:80%; height:360px"></div>
+<!-------------------------------------- Fin formulaure + carte ------------------------------------->
+<!-------------------------------------- Resultat --------------------------------------------------->
         <div class="FondVert">
-        <h2>Voici le résultat de votre recherche:</h2>
-        <?php
-        include 'php/results.php';
-        ?>
-
+            <h2>Résultat de votre recherche : </h2>
+            <?php include 'php/results.php'; ?>
         </div>
     </div>
     </main>
-
-    <div class="FondText">
-        <p>Bonjours et Bienvenue a vous sur OVNI TRUE OVNI TENDER</p>
-    </div>
-
-
     <footer>
         <div class="contact">
             <a href="php/contact.php">contact</a>

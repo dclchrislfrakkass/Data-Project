@@ -15,7 +15,7 @@ if(isset($_POST['Submit'])){
             $long = $resultat['Longitude'];
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb'].'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude']);
             echo '<br />';
-            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'].'<br><br>';
+            echo '<b>Ville et date : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation rapportée : </b>'.$resultat['ResumeWeb'].'<br><br>';
             // .'<b> latitude : </b>'.$resultat['Latitude']. '<b>longitude : </b>'.$resultat['Longitude'];
 
         } 
@@ -29,7 +29,7 @@ if(isset($_POST['Submit'])){
             $lat = $resultat['Latitude'];
             $long = $resultat['Longitude'];
             // var_dump('<b>Nom du cas : </b>'.$resultat['NomEtude'].'<b> Observation : </b>'.$resultat['ResumeWeb']);
-            echo '<b>Nom du cas : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation : </b>'.$resultat['ResumeWeb'];
+            echo '<b>Ville et date : </b>'.$resultat['NomEtude'].'<br>'.'<b> Observation rapportée : </b>'.$resultat['ResumeWeb'];
             echo '<br><br/>';
         }
     } else ;
@@ -49,8 +49,6 @@ if(isset($_POST['Submit'])){
     } else ;
 
 } else ;
-
-
 
 
 ?>
