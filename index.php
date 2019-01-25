@@ -24,24 +24,24 @@
     </header>
 
     <main>
-<!-------------------------------------- Formulaire + carte  ---------------------------------------->
-    <div class="contereurParent">
-        <div class="FondBleu">
-            <?php include 'php/Formulaire.php';?>
-        </div>
-        <div id="map"style="width:80%; height:360px"></div>
-<!-------------------------------------- Fin formulaure + carte ------------------------------------->
-<!-------------------------------------- Resultat --------------------------------------------------->
-        <div class="FondVert">
-            <h2>Résultat de votre recherche : </h2>
+<!-------------------------------------- Formulaire + carte + resultat---------------------------------------->
+
+    <div class="FondBleu">
+        <?php include 'php/Formulaire.php';?>
+    </div>
+    
+    <div id="map"></div>
+
+    <div class="FondVert">
+        <h2>Résultat de votre recherche : </h2>
+        <div class="results">
             <?php include 'php/results.php'; ?>
         </div>
     </div>
+
     </main>
     <footer>
-        <div class="contact">
             <a href="php/contact.php">contact</a>
-        </div>
     </footer>
 </div>
     <script src="main.js"></script>
